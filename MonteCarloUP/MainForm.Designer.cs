@@ -42,10 +42,13 @@
             buttonMinimize = new Button();
             buttonInfo = new Button();
             labelMathS = new Label();
+            buttonAnalize = new Button();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)acceptButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelDrawSpace).BeginInit();
             panelMapFrame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -54,7 +57,7 @@
             panel1.BackgroundImage = Properties.Resources.bg_textInput;
             panel1.Controls.Add(acceptButton);
             panel1.Controls.Add(textBoxDots);
-            panel1.Location = new Point(26, 25);
+            panel1.Location = new Point(27, 83);
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 38);
             panel1.TabIndex = 7;
@@ -133,7 +136,7 @@
             labelS.AutoSize = true;
             labelS.BackColor = Color.Transparent;
             labelS.Font = new Font("Minecraft Rus", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelS.Location = new Point(26, 72);
+            labelS.Location = new Point(27, 130);
             labelS.Name = "labelS";
             labelS.Size = new Size(123, 16);
             labelS.TabIndex = 9;
@@ -192,12 +195,43 @@
             labelMathS.AutoSize = true;
             labelMathS.BackColor = Color.Transparent;
             labelMathS.Font = new Font("Minecraft Rus", 8F);
-            labelMathS.Location = new Point(27, 92);
+            labelMathS.Location = new Point(28, 150);
             labelMathS.Name = "labelMathS";
             labelMathS.Size = new Size(185, 11);
             labelMathS.TabIndex = 13;
             labelMathS.Text = "S МАТЕМАТИЧЕСКАЯ: 10.1096";
             labelMathS.Visible = false;
+            // 
+            // buttonAnalize
+            // 
+            buttonAnalize.BackColor = Color.Transparent;
+            buttonAnalize.BackgroundImage = Properties.Resources.button;
+            buttonAnalize.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonAnalize.FlatAppearance.BorderSize = 0;
+            buttonAnalize.FlatStyle = FlatStyle.Flat;
+            buttonAnalize.Font = new Font("Minecraft Rus", 8F);
+            buttonAnalize.ForeColor = Color.White;
+            buttonAnalize.Location = new Point(87, 473);
+            buttonAnalize.Name = "buttonAnalize";
+            buttonAnalize.Size = new Size(115, 25);
+            buttonAnalize.TabIndex = 14;
+            buttonAnalize.Text = "АНАЛИЗ";
+            buttonAnalize.UseVisualStyleBackColor = false;
+            buttonAnalize.Visible = false;
+            buttonAnalize.Click += buttonAnalize_Click;
+            buttonAnalize.MouseLeave += buttonAnalize_MouseLeave;
+            buttonAnalize.MouseHover += buttonAnalize_MouseHover;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.title_intro;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(27, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(218, 59);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -207,6 +241,8 @@
             BackgroundImage = Properties.Resources.bg_mainForm;
             ClientSize = new Size(810, 510);
             ControlBox = false;
+            Controls.Add(pictureBox1);
+            Controls.Add(buttonAnalize);
             Controls.Add(labelMathS);
             Controls.Add(buttonInfo);
             Controls.Add(buttonMinimize);
@@ -229,6 +265,7 @@
             ((System.ComponentModel.ISupportInitialize)acceptButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelDrawSpace).EndInit();
             panelMapFrame.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -246,5 +283,7 @@
         private Button buttonInfo;
         private Button buttonClear;
         private Label labelMathS;
+        private Button buttonAnalize;
+        private PictureBox pictureBox1;
     }
 }

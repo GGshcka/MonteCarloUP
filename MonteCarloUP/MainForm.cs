@@ -33,6 +33,7 @@ namespace MonteCarloUP
             {
                 savedData.Load(fileName);
                 savedItems = savedData["savedItems"];
+                buttonAnalize.Visible = true;
             }
             else
             {
@@ -154,9 +155,9 @@ namespace MonteCarloUP
             }
 
             Random rand = new Random();
-            int pointsInsideCircle = 0; // Количество точек, попавших в круг
+            int pointsInsideCircle = 0; // РљРѕР»РёС‡РµСЃС‚РІРѕ С‚РѕС‡РµРє, РїРѕРїР°РІС€РёС… РІ РєСЂСѓРі
 
-            // Очищаем список точек перед новым расчетом
+            // РћС‡РёС‰Р°РµРј СЃРїРёСЃРѕРє С‚РѕС‡РµРє РїРµСЂРµРґ РЅРѕРІС‹Рј СЂР°СЃС‡РµС‚РѕРј
             points.Clear();
 
             for (int i = 0; i < totalPoints; i++)
@@ -164,7 +165,7 @@ namespace MonteCarloUP
                 double x = rand.NextDouble() * (cordX + radiusCircleSquare * 2 - cordX) + cordX;
                 double y = rand.NextDouble() * (cordY + radiusCircleSquare * 2 - cordY) + cordY;
 
-                // Проверяем, находится ли точка внутри круга и квадрата
+                // РџСЂРѕРІРµСЂСЏРµРј, РЅР°С…РѕРґРёС‚СЃСЏ Р»Рё С‚РѕС‡РєР° РІРЅСѓС‚СЂРё РєСЂСѓРіР° Рё РєРІР°РґСЂР°С‚Р°
                 if (Math.Pow((x - centerX), 2) + Math.Pow((y - centerY), 2) <= Math.Pow(radiusCircleSquare, 2))
                 {
                     if (((x - centerX) - scaleFactor) * Math.Pow(scaleFactor, 2) * Math.Pow(radiusCircleSquare, 2) <= x - (1 * scaleFactor))
@@ -180,10 +181,10 @@ namespace MonteCarloUP
                 }
             }
 
-            // Вычисляем площадь круга, используя метод Монте-Карло
+            // Р’С‹С‡РёСЃР»СЏРµРј РїР»РѕС‰Р°РґСЊ РєСЂСѓРіР°, РёСЃРїРѕР»СЊР·СѓСЏ РјРµС‚РѕРґ РњРѕРЅС‚Рµ-РљР°СЂР»Рѕ
             double circleS = Math.Round(((double)pointsInsideCircle / totalPoints * Math.Pow(radiusCircleSquare, 2)) / (scaleFactor * 10), 4, MidpointRounding.AwayFromZero);
 
-            labelS.Text = $"S СЕГМЕНТА: {circleS}";
+            labelS.Text = $"S РЎР•Р“РњР•РќРўРђ: {circleS}";
 
             saveToXml(circleS, totalPoints);
 
@@ -204,6 +205,11 @@ namespace MonteCarloUP
             item.Attributes.Append(savedTotalDots);
 
             savedData.Save("SavedData.xml");
+
+            if (buttonAnalize.Visible != true)
+            {
+                buttonAnalize.Visible = true;
+            }
         }
 
         private void acceptButton_MouseHover(object sender, EventArgs e)
@@ -218,7 +224,7 @@ namespace MonteCarloUP
         private void buttonClear_Click(object sender, EventArgs e)
         {
             points.Clear();
-            labelS.Text = "S СЕГМЕНТА:";
+            labelS.Text = "S РЎР•Р“РњР•РќРўРђ:";
             panelDrawSpace.Invalidate();
             labelMathS.Visible = false;
             buttonClear.Visible = false;
@@ -228,6 +234,20 @@ namespace MonteCarloUP
             buttonClear.BackgroundImage = Resources.buttonHovered;
         }
         private void buttonClear_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClear.BackgroundImage = Resources.button;
+        }
+
+        private void buttonAnalize_Click(object sender, EventArgs e)
+        {
+            var analizeForm = new AnalizeForm();
+            analizeForm.ShowDialog();
+        }
+        private void buttonAnalize_MouseHover(object sender, EventArgs e)
+        {
+            buttonClear.BackgroundImage = Resources.buttonHovered;
+        }
+        private void buttonAnalize_MouseLeave(object sender, EventArgs e)
         {
             buttonClear.BackgroundImage = Resources.button;
         }

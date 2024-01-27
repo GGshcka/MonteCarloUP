@@ -121,6 +121,9 @@
   <data name="app_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Icons\app_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bg_analize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\analize\bg_analize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>backgrounds\error\bg_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -36,4 +36,8 @@
     <Folder Include="Properties\backgrounds\info\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.1" />
+  </ItemGroup>
+
 </Project>
