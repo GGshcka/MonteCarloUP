@@ -193,6 +193,16 @@ namespace MonteCarloUP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn_help {
+            get {
+                object obj = ResourceManager.GetObject("btn_help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_info {
             get {
                 object obj = ResourceManager.GetObject("btn_info", resourceCulture);
@@ -227,6 +237,16 @@ namespace MonteCarloUP.Properties {
             get {
                 object obj = ResourceManager.GetObject("buttonHovered", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] minecraft {
+            get {
+                object obj = ResourceManager.GetObject("minecraft", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

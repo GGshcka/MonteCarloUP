@@ -35,6 +35,7 @@
             labelCompanyName = new Label();
             pictureBox1 = new PictureBox();
             okButton = new PictureBox();
+            buttonHelp = new Button();
             tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)okButton).BeginInit();
@@ -147,7 +148,7 @@
             okButton.BackColor = Color.Transparent;
             okButton.BackgroundImage = Properties.Resources.btn_back_info;
             okButton.BackgroundImageLayout = ImageLayout.Zoom;
-            okButton.Location = new Point(12, 316);
+            okButton.Location = new Point(0, 325);
             okButton.Name = "okButton";
             okButton.Size = new Size(53, 26);
             okButton.TabIndex = 25;
@@ -155,6 +156,22 @@
             okButton.Click += okButton_Click;
             okButton.MouseLeave += okButton_MouseLeave;
             okButton.MouseHover += okButton_MouseHover;
+            // 
+            // buttonHelp
+            // 
+            buttonHelp.BackColor = Color.Transparent;
+            buttonHelp.BackgroundImage = Properties.Resources.btn_help;
+            buttonHelp.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonHelp.FlatAppearance.BorderSize = 0;
+            buttonHelp.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonHelp.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonHelp.FlatStyle = FlatStyle.Flat;
+            buttonHelp.Location = new Point(255, 325);
+            buttonHelp.Name = "buttonHelp";
+            buttonHelp.Size = new Size(20, 20);
+            buttonHelp.TabIndex = 26;
+            buttonHelp.UseVisualStyleBackColor = false;
+            buttonHelp.Click += buttonHelp_Click;
             // 
             // InfoForm
             // 
@@ -165,6 +182,7 @@
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(289, 350);
             ControlBox = false;
+            Controls.Add(buttonHelp);
             Controls.Add(okButton);
             Controls.Add(tableLayoutPanel);
             DoubleBuffered = true;
@@ -194,5 +212,6 @@
         private System.Windows.Forms.Label labelCompanyName;
         private PictureBox okButton;
         private PictureBox pictureBox1;
+        private Button buttonHelp;
     }
 }

@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MonteCarloUP
 {
@@ -114,6 +116,12 @@ namespace MonteCarloUP
         private void okButton_MouseLeave(object sender, EventArgs e)
         {
             okButton.BackgroundImage = Resources.btn_back_info;
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            // Открыть файл help.chm
+            Help.ShowHelp(this, System.Windows.Forms.Application.StartupPath + @"help.chm");
         }
     }
 }

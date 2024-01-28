@@ -1,3 +1,6 @@
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
+
 namespace MonteCarloUP
 {
     internal static class Program
